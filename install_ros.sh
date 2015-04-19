@@ -5,6 +5,13 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# Get users in order to run this script as multiple users                       
+USER_LIST=`users`                                                               
+stringarray=($USER_LIST)                                                        
+NON_ROOT_USER=${stringarray[0]}                                                 
+# Env for running as a different user                                           
+RUNAS="sudo -u $NON_ROOT_USER"
+
 # Get ubuntu version                                                            
 VERSION_STRING=`lsb_release -r`                                                 
 VERSION=${VERSION_STRING//[A-Z:a]/}
@@ -29,14 +36,16 @@ wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | apt-k
 apt-get update
 
 # Install different ros version, depending on the ubuntu version
-apt-get install ros-$(ROSTYPE)-desktop-full
-apt-get install ros-$(ROSTYPE)-openni-launch
+apt-get install ros-$ROSTYPE-desktop-full
+apt-get install ros-$ROSTYPE-openni-launch
 echo "# Setup ros environment" >> ~/.bashrc
-echo "source /opt/ros/$(ROSTYPE)/setup.bash" >> ~/.bashrc
+echo "source /opt/ros/$ROSTYPE/setup.bash" >> ~/.bashrc
 
-# Initialize rosdep
-rosdep init
-rosdep update
+# Initialize rosdep - Don't run as root or permissions get screwed up
+$RUNAS bash<<___
+  rosdep init
+  rosdep update
+___
 
 # Get rosinstall
 apt-get install python-rosinstall
