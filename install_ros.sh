@@ -27,6 +27,7 @@ wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | apt-k
 apt-get update
 
 # Install different ros version, depending on the ubuntu version
+echo "# Setup ros environment" >> ~/.bashrc
 if [ $VERSION == "12.04" ]; then
   apt-get install ros-hydro-desktop-full
   echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
