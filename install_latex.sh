@@ -5,4 +5,4 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-apt-get install texlive-base texmaker texlive-latex-extra texlive-publishers texlive-fonts-recommended texlive-science texlive-bibtex-extra
+apt-get install -y texlive-base texmaker texlive-latex-extra texlive-publishers texlive-fonts-recommended texlive-science texlive-bibtex-extra

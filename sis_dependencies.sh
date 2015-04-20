@@ -5,4 +5,4 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-apt-get install g++ gcc cmake libxext-dev libapr1 libaprutil1 libexpat1-dev libfontconfig1-dev libfreetype6-dev libsvn1 libxft-dev libxpm-dev libxrender-dev subversion x11proto-render-dev zlib1g-dev libdrm-dev libice-dev libsm-dev libxt-dev mesa-common-dev python-dev tk-dev tcl libglu1-mesa libqt4-opengl-dev libcppunit-dev libusb-0.1-4 libusb-1.0-0 libusb-dev
+apt-get install -y g++ gcc cmake libxext-dev libapr1 libaprutil1 libexpat1-dev libfontconfig1-dev libfreetype6-dev libsvn1 libxft-dev libxpm-dev libxrender-dev subversion x11proto-render-dev zlib1g-dev libdrm-dev libice-dev libsm-dev libxt-dev mesa-common-dev python-dev tk-dev tcl libglu1-mesa libqt4-opengl-dev libcppunit-dev libusb-0.1-4 libusb-1.0-0 libusb-dev

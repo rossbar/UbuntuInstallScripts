@@ -5,4 +5,4 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-apt-get install python-dev python-numpy python-matplotlib wx-common python-wxmpl python-wxgtk2.8 python-setuptools python-vtk python-pyrex python-enthoughtbase python-numexpr cython python-scipy python-tables pyside-tools python-pyside python-opengl ipython ipython-notebook python-sklearn python-rope
+apt-get install -y python-dev python-numpy python-matplotlib wx-common python-wxmpl python-wxgtk2.8 python-setuptools python-vtk python-pyrex python-enthoughtbase python-numexpr cython python-scipy python-tables pyside-tools python-pyside python-opengl ipython ipython-notebook python-sklearn python-rope

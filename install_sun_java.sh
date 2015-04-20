@@ -5,7 +5,9 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+#Enter,Y,Enter,Left,Enter
+
 apt-get purge openjdk*
 add-apt-repository ppa:webupd8team/java
 apt-get update
-apt-get install oracle-java7-installer
+apt-get install -y oracle-java7-installer

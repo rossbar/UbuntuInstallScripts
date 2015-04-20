@@ -36,8 +36,8 @@ wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | apt-k
 apt-get update
 
 # Install different ros version, depending on the ubuntu version
-apt-get install ros-$ROSTYPE-desktop-full
-apt-get install ros-$ROSTYPE-openni-launch
+apt-get install -y ros-$ROSTYPE-desktop-full
+apt-get install -y ros-$ROSTYPE-openni-launch
 echo "# Setup ros environment" >> ~/.bashrc
 echo "source /opt/ros/$ROSTYPE/setup.bash" >> ~/.bashrc
 
@@ -48,4 +48,4 @@ $RUNAS bash<<___
 ___
 
 # Get rosinstall
-apt-get install python-rosinstall
+apt-get install -y python-rosinstall
