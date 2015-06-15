@@ -1,7 +1,16 @@
 #! /bin/bash
-
 ### Install lsd_slam package to home directory
 WS_NAME=lsd_slam_ws
+VERSION_STRING=`lsb_release -r`
+VERSION=${VERSION_STRING//[A-Z:a/]/}
+
+# Check the ubuntu version. If not 14.04 (ros indigo), exit
+if [ $VERSION != "14.04" ]; then
+  echo "Automated install only valid for ros indigo (Ubuntu 14.04)"
+  exit -1
+fi
+
+# Install
 mkdir $HOME/$WS_NAME
 cd $HOME/$WS_NAME
 rosws init . /opt/ros/indigo
