@@ -5,7 +5,7 @@ VERSION_STRING=`lsb_release -r`
 VERSION=${VERSION_STRING//[A-Z:a/]/}
 
 # Check the ubuntu version. If not 14.04 (ros indigo), exit
-if [ $VERSION != "14.04" ]; then
+if [ $VERSION -ne "14.04" ]; then
   echo "Automated install only valid for ros indigo (Ubuntu 14.04)"
   exit -1
 fi
@@ -21,5 +21,12 @@ source setup.bash
 cd src
 # Pull down sourcecode
 git clone https://github.com/rossbar/lsd_slam.git lsd_slam
+# Configure git repo
+cd lsd_slam
+git remote add upstream https://github.com/tum-vision/lsd_slam.git
+# Update from upstream
+git fetch upstream
+git pull upstream master
+
 # Compile
 rosmake lsd_slam
