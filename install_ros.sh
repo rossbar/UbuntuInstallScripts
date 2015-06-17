@@ -51,6 +51,6 @@ ___
 apt-get install -y python-rosinstall
 
 # For lsd slam in ros indigo
-if [ $VERSION == "14.04"]; then
+if [ $VERSION == "14.04" ]; then
   apt-get install -y ros-indigo-libg2o ros-indigo-cv-bridge liblapack-dev libblas-dev freeglut3-dev libqglviewer-dev libsuitesparse-dev libx11-dev
 fi
