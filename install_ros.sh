@@ -42,8 +42,8 @@ echo "# Setup ros environment" >> ~/.bashrc
 echo "source /opt/ros/$ROSTYPE/setup.bash" >> ~/.bashrc
 
 # Initialize rosdep - Don't run as root or permissions get screwed up
+rosdep init
 $RUNAS bash<<___
-  rosdep init
   rosdep update
 ___
 
