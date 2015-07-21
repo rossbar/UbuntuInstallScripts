@@ -13,6 +13,7 @@
 11. sudo install\_ros.sh
 11. install\_rgbdslamv2.sh
 12. sudo install\_latex.sh - Pulls > 1Gb from internet
+13. install\_root.sh - no sudo
 13. sudo install\_sis.sh - Only works in 12.04
 14. vim\_upgrade.sh
 

@@ -5,4 +5,4 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-pip install --upgrade tornado distribute jinja2 six numpy ipython matplotlib scipy pandas scikit-image scikit-learn mayavi
+pip install --upgrade tornado distribute jinja2 six numpy ipython matplotlib scipy pandas scikit-image scikit-learn mayavi ntplib tables
