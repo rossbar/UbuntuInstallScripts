@@ -7,6 +7,7 @@ git config --global color.ui true
 git config --global core.editor vim
 # push options
 git config --global push.followTags true
+git config --global push.default simple
 
 # Aliases
 git config --global alias.unstage 'reset HEAD --'
