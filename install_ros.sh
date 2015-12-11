@@ -15,6 +15,7 @@ RUNAS="sudo -u $NON_ROOT_USER"
 # Get ubuntu version                                                            
 VERSION_STRING=`lsb_release -r`                                                 
 VERSION=${VERSION_STRING//[A-Z:a]/}
+echo "Detected Ubuntu Version: $VERSION"
 
 # Choose correct apt repository for different ubuntu versions
 if [ $VERSION == "12.04" ]; then
@@ -24,7 +25,6 @@ elif [ $VERSION == "14.04" ]; then
   echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list
   ROSTYPE=indigo
 else
-  echo "Detected Ubuntu Version: $VERSION"
   echo "Automated install only configured for 12.04, 14.04"
   echo "Exiting..."
 fi
