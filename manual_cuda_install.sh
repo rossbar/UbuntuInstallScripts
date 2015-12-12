@@ -19,5 +19,5 @@ mkdir -p $CUDA_SAMPLE_DIR
 /usr/local/cuda/bin/cuda-install-samples-7.5.sh $CUDA_SAMPLE_DIR
 # Set up environment
 echo "# For CUDA" >> $HOME/.bashrc
-echo "export PATH=$PATH:/usr/local/cuda-7.5/bin"
-echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib"
+echo 'export PATH=$PATH:/usr/local/cuda-7.5/bin' >> $HOME/.bashrc
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib' >> $HOME/.bashrc
