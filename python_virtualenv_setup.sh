@@ -6,10 +6,15 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Install virtualenv and wrapper
-pip install virtualenv
-pip install virtualenvwrapper
+pip install --upgrade virtualenv
+pip install --upgrade virtualenvwrapper
 
-# Set up wrapper
+# Apply changes
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+
+# Set up env in .bashrc
 echo '# For python virtualenv' >> $HOME/.bashrc
 echo 'export WORKON_HOME=$HOME/.virtualenvs' >> $HOME/.bashrc
 echo 'source /usr/local/bin/virtualenvwrapper.sh' >> $HOME/.bashrc
