@@ -20,7 +20,7 @@ Start from the top and work down
    `configure\_bash.sh`
 7. Personalize vim: vim\_upgrade.sh
 8. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to
-    auto-mount additional disks
+   auto-mount additional disks
 
   **More system packages**
 
@@ -41,16 +41,16 @@ Start from the top and work down
 12. Uses `apt-get` to install python packages for system python.
    >350 Mb from the network: `sudo python\_install.sh`
 13. Use `pip` to upgrade the packages that were installed with `apt-get` in
-    the previous script. This ensures that you have the most up-to-date version
-    of python packages. **NOTE** some packages, particularly scipy and the
-    PySide bindings, take a very long time to build (O(30min)).
-    `sudo python\_upgrade.sh`
+   the previous script. This ensures that you have the most up-to-date version
+   of python packages. **NOTE** some packages, particularly scipy and the
+   PySide bindings, take a very long time to build (O(30min)).
+   `sudo python\_upgrade.sh`
 14. Mayavi installation is a bear, requires special attention to keep from
-    borking everything:
-    `sudo python_mayavi.sh`
+   borking everything:
+   `sudo python_mayavi.sh`
 15. Set up `virtualenv` and associated tools to combat python compatibility 
-    issues when installing new packages:
-    `sudo python\_virtualenv\_setup.sh`
+   issues when installing new packages:
+   `sudo python\_virtualenv\_setup.sh`
 
   **Robot Operating System and Apps**
 
