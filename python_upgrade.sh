@@ -5,7 +5,7 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-for PACKAGE in setuptools tornado distribute jinja2 six numpy ipython matplotlib cython scipy pandas scikit-image scikit-learn mayavi ntplib tables pyvtk numexpr pyopengl rope netifaces pyqtgraph progressbar
+for PACKAGE in setuptools tornado distribute jinja2 six numpy ipython matplotlib cython scipy pandas scikit-image scikit-learn ntplib tables pyvtk numexpr pyopengl rope netifaces pyqtgraph progressbar
 do
 	pip install --upgrade $PACKAGE
 done
