@@ -7,6 +7,7 @@
 1. Install the rest of the basics: `sudo initial\_apt\_get.sh`
 1. Install graphics drivers here as necessary (see `install_bumblebee.sh` for 
    laptops with nvidia optimus (i.e. discrete graphics cards))
+
 ## Configure Environment
 2. Configure git. NOTE: make sure to change the user.name and user.email before
    running the script! Adjust other params according to preference.
@@ -16,6 +17,7 @@
 14. Personalize vim: vim\_upgrade.sh
 15. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to
     auto-mount additional disks
+
 ## More system packages
 <!-- Requires some user input - required for LBL network -->
 4. Requires user I/O (have to agree to licenses etc.) This script is required 
@@ -28,6 +30,7 @@
 8. Install Qt4. This has to be complete before running the python installation
    scripts. Pulls >400 Mb from network:
    `sudo apt-get install qt-sdk`
+
 ## Python installation
 9. Uses `apt-get` to install python packages for system python.
    >350 Mb from the network: `sudo python\_install.sh`
@@ -42,9 +45,11 @@
 10. Set up `virtualenv` and associated tools to combat python compatibility 
     issues when installing new packages:
     `sudo python\_virtualenv\_setup.sh`
+
 # Robot Operating System and Apps
 11. Install ros: `sudo install\_ros.sh`
 11. Install rgbdslam: `install\_rgbdslamv2.sh`
+
 # Install additional software
 12. sudo install\_latex.sh - Pulls > 1Gb from internet
 13. install\_root.sh - no sudo
