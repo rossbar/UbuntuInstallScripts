@@ -26,4 +26,5 @@
 13. install\_root.sh - no sudo
 13. sudo install\_sis.sh - Only works in 12.04
 14. vim\_upgrade.sh
-
+15. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to
+    auto-mount additional disks
