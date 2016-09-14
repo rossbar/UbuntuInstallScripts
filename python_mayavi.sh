@@ -6,7 +6,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Install dependencies
-apt-get install tcl-vtk python-vtk
+apt-get install -y tcl-vtk python-vtk
 
 # So far, I've only been able to get 4.4.4 to build and run properly
 pip install --upgrade mayavi==4.4.4
