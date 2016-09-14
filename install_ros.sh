@@ -38,17 +38,24 @@ apt-get update
 # Install different ros version, depending on the ubuntu version
 apt-get install -y ros-$ROSTYPE-desktop-full
 apt-get install -y ros-$ROSTYPE-openni-launch
-echo "# Setup ros environment" >> ~/.bashrc
-echo "source /opt/ros/$ROSTYPE/setup.bash" >> ~/.bashrc
 
-# Initialize rosdep - Don't run as root or permissions get screwed up
+# Set up ROS environment for this session
 $RUNAS bash<<___
-  rosdep init
+  source /opt/ros/$ROSTYPE/setup.bash
+___
+
+# Initialize rosdep
+rosdep init
+
+# Use rosdep to update - Don't run as root or permissions get screwed up
+$RUNAS bash<<___
+  echo "# Setup ros environment" >> ~/.bashrc
+  echo "source /opt/ros/$ROSTYPE/setup.bash" >> ~/.bashrc
   rosdep update
 ___
 
-# Get rosinstall
-apt-get install -y python-rosinstall
+# Get addtional ros tools
+apt-get install -y python-rosinstall python-wstool
 
 # For lsd slam in ros indigo
 if [ $VERSION == "14.04" ]; then
