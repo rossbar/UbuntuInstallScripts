@@ -19,12 +19,10 @@ Start from the top and work down
 6. Add color and git\_ps1 to bash prompt. Add any aliases as well.
    `configure\_bash.sh`
 7. Personalize vim: vim\_upgrade.sh
-8. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to
-   auto-mount additional disks
+8. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to auto-mount additional disks
 
   **More system packages**
 
-<!-- Requires some user input - required for LBL network -->
 9. Requires user I/O (have to agree to licenses etc.) This script is required 
    for operating on the LBL network (security will lock you out if you java 
    isn't up-to-date):
