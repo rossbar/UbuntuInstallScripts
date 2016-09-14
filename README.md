@@ -12,6 +12,8 @@
 8. sudo apt-get install qt-sdk - Pulls > 250 Mb from internet
 9. sudo python\_install.sh - Pulls > 350 Mb from internet
 10. sudo python\_upgrade.sh - Scipy takes a real long time to compile
+10. sudo python\_mayavi.sh - Mayavi installation is a bear, requires special 
+                             attention to keep from borking everything
 10. sudo python\_virtualenv\_setup.sh
 11. sudo install\_ros.sh
 11. install\_rgbdslamv2.sh
