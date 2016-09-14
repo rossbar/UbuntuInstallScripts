@@ -1,8 +1,13 @@
 **Install Order**
 
-<!-- ubiquitous system tools -->
-1. sudo initial\_apt\_get.sh - Install all of the basics
-<!-- configure environments -->
+# Setup
+1. Make sure you are up-to-date: `sudo update-manager`
+1. Basic tools for git (so you can get this repo):
+   `sudo apt-get install vim git xclip`
+1. Install the rest of the basics: `sudo initial\_apt\_get.sh`
+1. Install graphics drivers here as necessary (see `install_bumblebee.sh` for 
+   laptops with nvidia optimus (i.e. discrete graphics cards))
+# Configure Environment
 2. configure\_git.sh
 3. configure\_bash.sh - Set up bash prompt and universal aliases
 <!-- Requires some user input - required for LBL network -->
