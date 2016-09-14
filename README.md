@@ -1,13 +1,13 @@
-**Install Order**
+# Order of Installation
 
-# Setup
+## Setup
 1. Make sure you are up-to-date: `sudo update-manager`
 1. Basic tools for git (so you can get this repo):
    `sudo apt-get install vim git xclip`
 1. Install the rest of the basics: `sudo initial\_apt\_get.sh`
 1. Install graphics drivers here as necessary (see `install_bumblebee.sh` for 
    laptops with nvidia optimus (i.e. discrete graphics cards))
-# Configure Environment
+## Configure Environment
 2. Configure git. NOTE: make sure to change the user.name and user.email before
    running the script! Adjust other params according to preference.
    `configure\_git.sh`
@@ -16,7 +16,7 @@
 14. Personalize vim: vim\_upgrade.sh
 15. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to
     auto-mount additional disks
-# More system packages
+## More system packages
 <!-- Requires some user input - required for LBL network -->
 4. Requires user I/O (have to agree to licenses etc.) This script is required 
    for operating on the LBL network (security will lock you out if you java 
@@ -28,15 +28,13 @@
 8. Install Qt4. This has to be complete before running the python installation
    scripts. Pulls >400 Mb from network:
    `sudo apt-get install qt-sdk`
-# Python installation
+## Python installation
 9. Uses `apt-get` to install python packages for system python.
-   >350 Mb from the network:
-   `sudo python\_install.sh`
+   >350 Mb from the network: `sudo python\_install.sh`
 10. Use `pip` to upgrade the packages that were installed with `apt-get` in
     the previous script. This ensures that you have the most up-to-date version
-    of python packages (the .debs generally have older versions).
-    **NOTE** some packages, particularly scipy and the PySide bindings, take a
-    very long time to build (O(30min)).
+    of python packages. **NOTE** some packages, particularly scipy and the
+    PySide bindings, take a very long time to build (O(30min)).
     `sudo python\_upgrade.sh`
 10. Mayavi installation is a bear, requires special attention to keep from
     borking everything:
