@@ -5,14 +5,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-# Get users in order to run this script as multiple users
-USER_LIST=`users`
-stringarray=($USER_LIST)
-NON_ROOT_USER=${stringarray[0]}
-
-# Env for running as a different user
-RUNAS="sudo -u $NON_ROOT_USER"
-
 # Get ubuntu version
 VERSION_STRING=`lsb_release -r`
 VERSION=${VERSION_STRING//[A-Z:a]/}
@@ -20,7 +12,7 @@ SISDIR=$HOME/SIS
 PERMISSION_FILE=/etc/udev/rules.d/60-sis3150.rules
 # Only operate on unbuntu 12.04
 if [ $VERSION == "12.04" ]; then
-$RUNAS bash<<___
+sudo -u `logname` bash<<___
   # Unpack the SIS tar
   mkdir $SISDIR
   tar -C $SISDIR -xzf sisusb-1.2-003.tar.gz
