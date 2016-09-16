@@ -30,9 +30,7 @@ wget -O $PKG_NAME $DB_LINK
 
 # Install
 dpkg -i $PKG_NAME
+# Remove deb
+rm $DL_LOC/$PKG_NAME
 
-# Run dropbox daemon for initialization
-sudo -u `logname` bash<<___
-  dropbox
-___
-
+echo "Dropbox ready to be configured... run \$ dropbox start to continue."
