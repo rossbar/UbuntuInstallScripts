@@ -10,3 +10,7 @@ apt-get install -y tcl-vtk python-vtk
 
 # So far, I've only been able to get 4.4.4 to build and run properly
 pip install --upgrade mayavi==4.4.4
+
+# Adjust environment for mayavi
+echo "export ETS_TOOLKIT=qt4" >> $HOME/.bashrc
+echo "export QT_API=pyside" >> $HOME/.bashrc
