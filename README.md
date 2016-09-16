@@ -57,6 +57,9 @@ Start from the top and work down
 
   **Install additional software**
 
+18. `sudo install_dropbox.sh` - Best to run this near the end, as dropbox 
+    syncing can use up a lot of network resources depending on how much stuff
+    you have in your dropbox.
 18. `sudo install\_latex.sh` - Pulls > 1Gb from internet
 19. `install\_root.sh` - no sudo
 20. `sudo install\_sis.sh` - Linux drivers for SIS cards + python wrappers
