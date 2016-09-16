@@ -2,6 +2,11 @@
 
 Start from the top and work down
 
+**WARNING** - These scripts are intended for use on a brand new install - there
+is currently no checking to see if software has been previously installed. This
+doesn't matter for many of the scripts that use package managers (apt-get, pip,
+etc.) but may cause problems for standalone installations.
+
   **Setup**
 
 1. Make sure you are up-to-date: `sudo update-manager`
