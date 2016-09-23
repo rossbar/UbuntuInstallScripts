@@ -5,13 +5,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-# Get users in order to run this script as multiple users                       
-USER_LIST=`users`                                                               
-stringarray=($USER_LIST)                                                        
-NON_ROOT_USER=${stringarray[0]}                                                 
-# Env for running as a different user                                           
-RUNAS="sudo -u $NON_ROOT_USER"
-
 # Get ubuntu version                                                            
 VERSION_STRING=`lsb_release -r`                                                 
 VERSION=${VERSION_STRING//[A-Z:a]/}
@@ -38,17 +31,24 @@ apt-get update
 # Install different ros version, depending on the ubuntu version
 apt-get install -y ros-$ROSTYPE-desktop-full
 apt-get install -y ros-$ROSTYPE-openni-launch
-echo "# Setup ros environment" >> ~/.bashrc
-echo "source /opt/ros/$ROSTYPE/setup.bash" >> ~/.bashrc
 
-# Initialize rosdep - Don't run as root or permissions get screwed up
-$RUNAS bash<<___
-  rosdep init
+# Set up ROS environment for this session
+sudo -u `logname` bash<<___
+  source /opt/ros/$ROSTYPE/setup.bash
+___
+
+# Initialize rosdep
+rosdep init
+
+# Use rosdep to update - Don't run as root or permissions get screwed up
+sudo -u `logname` bash<<___
+  echo "# Setup ros environment" >> ~/.bashrc
+  echo "source /opt/ros/$ROSTYPE/setup.bash" >> ~/.bashrc
   rosdep update
 ___
 
-# Get rosinstall
-apt-get install -y python-rosinstall
+# Get addtional ros tools
+apt-get install -y python-rosinstall python-wstool
 
 # For lsd slam in ros indigo
 if [ $VERSION == "14.04" ]; then

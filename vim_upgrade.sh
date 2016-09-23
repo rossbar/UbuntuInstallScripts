@@ -11,6 +11,8 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set colorcolumn=80
+set expandtab
+set tabstop=4
 EOM
 # Upgrades!
 # vim-sensible
