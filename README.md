@@ -45,27 +45,31 @@ etc.) but may cause problems for standalone installations.
 
   **Python installation**
 
-12. Uses `apt-get` to install python packages for system python.
-   >350 Mb from the network: `sudo python\_install.sh`
-13. Use `pip` to upgrade the packages that were installed with `apt-get` in
-   the previous script. This ensures that you have the most up-to-date version
-   of python packages. **NOTE** some packages, particularly scipy and the
-   PySide bindings, take a very long time to build (O(30min)).
-   `sudo python\_upgrade.sh`
-14. Mayavi installation is a bear, requires special attention to keep from
-   borking everything:
-   `sudo python_mayavi.sh`
-15. Set up `virtualenv` and associated tools to combat python compatibility 
-   issues when installing new packages:
-   `sudo python\_virtualenv\_setup.sh`
+12. `sudo python\_install.sh`: Use `apt-get` to install python packages for
+   system python. **NOTE**: Downloads >350 Mb from the network.
+13. `sudo python\_upgrade.sh`. Use `pip` to upgrade the packages that were
+   installed with `apt-get`, and install new python packages to the system
+   python. **NOTE**: some packages, particularly scipy and the PySide bindings,
+   take a very long time to build (O(30min)).
+   
+14. `sudo python_mayavi.sh`: Mayavi installation is annoying, requires special
+   attention to keep from borking python environment.
+   
+15. `sudo python\_virtualenv\_setup.sh`: Set up `virtualenv` and associated
+   tools to combat python compatibility issues when installing new packages.
+   
 
   **Robot Operating System and Apps**
 
-16. Install ros: `sudo install\_ros.sh`
-17. Install rgbdslam: `install\_rgbdslamv2.sh`
+16. `sudo install\_ros.sh`: Install the 
+   [Robot Operating System](http://www.ros.org/).
+17. `install\_rgbdslamv2.sh`: Install 
+   [RGBDSLAM](http://felixendres.github.io/rgbdslam_v2/) for SLAM with Kinect.
 
   **Install additional software**
 
-18. `sudo install\_latex.sh` - Pulls > 1Gb from internet
-19. `install\_root.sh` - no sudo
-20. `sudo install\_sis.sh` - Linux drivers for SIS cards + python wrappers
+18. `sudo install\_latex.sh`: Install latex and commonly-used packages for
+   writing scientific papers. **NOTE**: Pulls > 1Gb from internet.
+19. `install\_root.sh`: Install the [ROOT](https://root.cern.ch/) analysis
+   framework for physics data. **NOTE**: No `sudo` for this script.
+20. `sudo install\_sis.sh`: Linux drivers for SIS cards + python wrappers
