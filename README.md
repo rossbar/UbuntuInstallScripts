@@ -9,35 +9,39 @@ etc.) but may cause problems for standalone installations.
 
   **Setup**
 
-1. Make sure you are up-to-date: `sudo update-manager`
-2. Basic tools for git (so you can get this repo):
-   `sudo apt-get install vim git xclip`
-3. Install the rest of the basics: `sudo initial\_apt\_get.sh`
+1. `sudo update-manager`: Make sure you are up-to-date.
+2. `sudo apt-get install vim git xclip`: Basic tools for git
+   (so you can get this repo).
+3. `sudo initial\_apt\_get.sh` Install the rest of the basics.
 4. Install graphics drivers here as necessary (see `install_bumblebee.sh` for 
    laptops with nvidia optimus (i.e. discrete graphics cards))
 
   **Configure Environment**
 
-5. Configure git. NOTE: make sure to change the user.name and user.email before
-   running the script! Adjust other params according to preference.
-   `configure\_git.sh`
-6. Add color and git\_ps1 to bash prompt. Add any aliases as well.
-   `configure\_bash.sh`
-7. Personalize vim: vim\_upgrade.sh
-8. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to auto-mount additional disks
+5. `configure\_git.sh`: Configure git. **NOTE**: make sure to change the
+   user.name and user.email before running the script! Adjust other params
+   according to preference.
+   
+6. `configure\_bash.sh`: Add color and git\_ps1 to bash prompt. Add any aliases
+   as well.
+7. vim\_upgrade.sh: Personalize vim.
+8. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to
+   auto-mount additional disks
 
   **More system packages**
 
-9. Requires user I/O (have to agree to licenses etc.) This script is required 
-   for operating on the LBL network (security will lock you out if you java 
-   isn't up-to-date):
-   `sudo install\_sun\_java.sh`
-10. Dependencies for ROOT (not necessary if you're not going to install the
-   ROOT analysis package):
-   `sudo root\_dependencies.sh`
-11. Install Qt4. This has to be complete before running the python installation
-   scripts. Pulls >400 Mb from network:
-   `sudo apt-get install qt-sdk`
+9. `sudo install\_sun\_java.sh`: Install sun version of java. **NOTE**: 
+   Requires user I/O (have to agree to licenses etc.) **WARNING**: sun java
+   implementation is NOT open-source.
+   
+10. `sudo root\_dependencies.sh`: Dependencies for ROOT (not necessary if
+   you're not going to install the 
+   [ROOT analysis package](https://root.cern.ch/) package).
+   
+11. `sudo apt-get install qt-sdk`: Install Qt4. This has to be complete before
+   running the python installation scripts. **NOTE**: Downloads >400 Mb from
+   network.
+   
 
   **Python installation**
 
