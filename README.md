@@ -24,7 +24,7 @@ etc.) but may cause problems for standalone installations.
    
 6. `configure\_bash.sh`: Add color and git\_ps1 to bash prompt. Add any aliases
    as well.
-7. vim\_upgrade.sh: Personalize vim.
+7. `vim\_upgrade.sh`: Personalize vim.
 8. [Setup fstab](https://gist.github.com/rossbar/c7bb5c6e0f18631b30fe) to
    auto-mount additional disks
 
@@ -36,7 +36,7 @@ etc.) but may cause problems for standalone installations.
    
 10. `sudo root\_dependencies.sh`: Dependencies for ROOT (not necessary if
    you're not going to install the 
-   [ROOT analysis package](https://root.cern.ch/) package).
+   [ROOT analysis package](https://root.cern.ch/)).
    
 11. `sudo apt-get install qt-sdk`: Install Qt4. This has to be complete before
    running the python installation scripts. **NOTE**: Downloads >400 Mb from
@@ -48,9 +48,9 @@ etc.) but may cause problems for standalone installations.
 12. `sudo python\_install.sh`: Use `apt-get` to install python packages for
    system python. **NOTE**: Downloads >350 Mb from the network.
 13. `sudo python\_upgrade.sh`. Use `pip` to upgrade the packages that were
-   installed with `apt-get`, and install new python packages to the system
-   python. **NOTE**: some packages, particularly scipy and the PySide bindings,
-   take a very long time to build (O(30min)).
+   installed with `apt-get`, as well as install new python packages to the
+   system python. **NOTE**: some packages, particularly scipy and the PySide
+   bindings, take a very long time to build (O(30min)).
    
 14. `sudo python_mayavi.sh`: Mayavi installation is annoying, requires special
    attention to keep from borking python environment.
