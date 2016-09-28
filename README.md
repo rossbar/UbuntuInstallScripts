@@ -72,4 +72,4 @@ etc.) but may cause problems for standalone installations.
    writing scientific papers. **NOTE**: Pulls > 1Gb from internet.
 19. `install_root.sh`: Install the [ROOT](https://root.cern.ch/) analysis
    framework for physics data. **NOTE**: No `sudo` for this script.
-20. `sudo install_sis.sh`: Linux drivers for SIS cards + python wrappers
+20. Install SIS: See [this repo](https://github.com/bearing/SIS/)
