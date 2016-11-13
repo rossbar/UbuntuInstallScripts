@@ -47,7 +47,8 @@ etc.) but may cause problems for standalone installations.
 
 12. `sudo python_install.sh`: Use `apt-get` to install python packages for
    system python. **NOTE**: Downloads >350 Mb from the network.
-13. `sudo python_upgrade.sh`. Use `pip` to upgrade the packages that were
+
+13. `sudo -H python_upgrade.sh`. Use `pip` to upgrade the packages that were
    installed with `apt-get`, as well as install new python packages to the
    system python. **NOTE**: some packages, particularly scipy and the PySide
    bindings, take a very long time to build (O(30min)).
