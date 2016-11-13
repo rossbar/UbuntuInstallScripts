@@ -20,4 +20,4 @@ BMAG="\[\033[45m\]" # background magenta
 BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
-PS1="$FBLE\u$FYEL\w$FMAG\$(__git_ps1)$FWHT$ "
+PS1="$FBLE\u$FWHT@$FGRN\h$FYEL\w$FMAG\$(__git_ps1)$FWHT$ "

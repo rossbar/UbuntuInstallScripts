@@ -12,3 +12,4 @@ git config --global push.default simple
 # Aliases
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.hist 'log --all --graph --decorate --oneline'
+git config --global alias.hash 'log --pretty="%H" -n 1'
