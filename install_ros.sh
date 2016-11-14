@@ -17,9 +17,13 @@ if [ $VERSION == "12.04" ]; then
 elif [ $VERSION == "14.04" ]; then
   echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list
   ROSTYPE=indigo
+elif [ $VERSION == "16.04" ]; then
+  echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list
+  ROSTYPE=kinetic
 else
   echo "Automated install only configured for 12.04, 14.04"
   echo "Exiting..."
+  exit 1
 fi
 
 # Setup keys
@@ -33,7 +37,7 @@ apt-get install -y ros-$ROSTYPE-desktop-full
 apt-get install -y ros-$ROSTYPE-openni-launch
 
 # Set up ROS environment for this session
-sudo -u `logname` bash<<___
+sudo -u $SUDO_USER bash<<___
   source /opt/ros/$ROSTYPE/setup.bash
 ___
 
@@ -41,7 +45,7 @@ ___
 rosdep init
 
 # Use rosdep to update - Don't run as root or permissions get screwed up
-sudo -u `logname` bash<<___
+sudo -u $SUDO_USER bash<<___
   echo "# Setup ros environment" >> ~/.bashrc
   echo "source /opt/ros/$ROSTYPE/setup.bash" >> ~/.bashrc
   rosdep update
