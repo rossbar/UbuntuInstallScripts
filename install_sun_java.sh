@@ -10,4 +10,4 @@ fi
 apt-get purge openjdk*
 add-apt-repository ppa:webupd8team/java
 apt-get update
-apt-get install -y oracle-java7-installer
+apt-get install -y oracle-java8-installer
