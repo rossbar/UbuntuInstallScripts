@@ -21,7 +21,7 @@ elif [ $VERSION == "16.04" ]; then
   echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list
   ROSTYPE=kinetic
 else
-  echo "Automated install only configured for 12.04, 14.04"
+  echo "Automated install only configured for 12.04, 14.04, 16.04"
   echo "Exiting..."
   exit 1
 fi
