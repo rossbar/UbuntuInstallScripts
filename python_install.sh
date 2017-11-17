@@ -5,4 +5,4 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-apt-get install -y python-dev wx-common python-wxgtk3.0-dev python-enthoughtbase pyside-tools python-qt4-gl python3-dev python-apt
+apt-get install -y python-dev wx-common python-wxgtk3.0-dev python-enthoughtbase pyside-tools python-qt4-gl python3-dev python-apt python-tk

@@ -10,7 +10,7 @@ pip install --upgrade virtualenv
 pip install --upgrade virtualenvwrapper
 
 # Apply changes (with correct permissions)
-sudo -u `logname` bash<<___
+sudo -u $USER bash<<___
   export WORKON_HOME=$HOME/.virtualenvs
   source /usr/local/bin/virtualenvwrapper.sh
   export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
