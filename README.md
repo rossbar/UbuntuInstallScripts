@@ -9,7 +9,7 @@ etc.) but may cause problems for standalone installations.
 
   **Setup**
 
-1. `sudo update-manager`: Make sure you are up-to-date.
+1. `sudo apt-get update && apt-get upgrade`: Make sure you are up-to-date.
 2. `sudo apt-get install vim git xclip`: Basic tools for git
    (so you can get this repo).
 3. `sudo initial_apt_get.sh` Install the rest of the basics.
