@@ -16,7 +16,7 @@ cd $HOME/$WS_NAME
 rosws init . /opt/ros/indigo
 mkdir src
 rosws set $HOME/$WS_NAME/src -t .
-echo "source $HOME/$WS_NAME/setup.bash" >> $HOME/.bashrc
+#echo "source $HOME/$WS_NAME/setup.bash" >> $HOME/.bashrc
 source setup.bash
 cd src
 # Pull down sourcecode
