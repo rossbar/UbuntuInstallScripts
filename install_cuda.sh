@@ -15,10 +15,11 @@ CUDA_INSTALL_PATH=/usr/local/cuda-$MAJ_REV.$MIN_REV
 # Ensure linux-headers are installed
 apt-get install -y linux-headers-$(uname -r)
 # Unpack downloaded .deb
-dpkg -i $HOME/Downloads/$CUDA_PKG
+dpkg -i $CUDA_PKG
 # Install using apt-get
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
 apt-get update
-apt-get install
+apt-get install -y cuda
 
 # Update path/lib info in bashrc
 echo "# CUDA" >> $HOME/.bashrc
