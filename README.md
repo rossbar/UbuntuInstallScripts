@@ -30,14 +30,8 @@ The simplest that I've found is as follows:
    `~/Downloads` and 2) the nvidia driver from the previous steps is installed
    correctly (check this with `nvidia-smi`).
  - Run `install_cuda.sh`. Reboot again.
- - Add the CUDA bin/runtimes to your environment:
-```bash
-echo "export PATH=/usr/local/cuda-TOOLKITVER/bin:$PATH" >> $HOME/.bashrc
-echo "export LD_LIBRARY_PATH=/usr/local/cuda-TOOLKITVER/lib64:$LD_LIBRARY_PATH" >> $HOME/.bashrc
-```
-   Where TOOLKITVER = the version of the cuda toolkit that was installed.
  - As a simple check to make sure everything is set up properly: `nvcc --version`.
-   If you get `command not found`, something is wrong with the PATH
+   If you get `command not found`, doublecheck the PATH.
  - As a more thorough check to make sure everything is set up properly, use
    `cuda-install-samples-9.1.sh` to install the toolkit samples, then pick one
    to try to compile and run.
