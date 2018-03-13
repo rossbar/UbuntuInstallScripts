@@ -97,4 +97,4 @@ The simplest that I've found is as follows:
    writing scientific papers. **NOTE**: Pulls > 1Gb from internet.
 19. `install_root.sh`: Install the [ROOT](https://root.cern.ch/) analysis
    framework for physics data. **NOTE**: No `sudo` for this script.
-20. Install SIS: See [this repo](https://github.com/bearing/SIS/)
+20. Install SIS: See [this repo](https://github.com/bearing/SIS/) (private).
