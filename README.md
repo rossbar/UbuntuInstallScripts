@@ -14,7 +14,33 @@ etc.) but may cause problems for standalone installations.
    (so you can get this repo).
 3. `sudo initial_apt_get.sh` Install the rest of the basics.
 4. Install graphics drivers here as necessary (see `install_bumblebee.sh` for 
-   laptops with nvidia optimus (i.e. discrete graphics cards))
+   laptops with nvidia optimus (i.e. discrete graphics cards)).
+   For CUDA installation, see next step.
+
+  **Cuda Install**
+
+There are many ways to do this.
+The simplest that I've found is as follows:
+ - Use the "Additional Drivers" mechanism to enable the proprietary nvidia
+   drivers. Reboot.
+ - Download the appropriate CUDA toolkit from 
+   [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux). 
+   You want the network .deb
+ - Ensure that 1) there is one and *only* one cuda-repo-\*.deb file in 
+   `~/Downloads` and 2) the nvidia driver from the previous steps is installed
+   correctly (check this with `nvidia-smi`).
+ - Run `install_cuda.sh`. Reboot again.
+ - Add the CUDA bin/runtimes to your environment:
+```bash
+echo "export PATH=/usr/local/cuda-TOOLKITVER/bin:$PATH" >> $HOME/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda-TOOLKITVER/lib64:$LD_LIBRARY_PATH" >> $HOME/.bashrc
+```
+   Where TOOLKITVER = the version of the cuda toolkit that was installed.
+ - As a simple check to make sure everything is set up properly: `nvcc --version`.
+   If you get `command not found`, something is wrong with the PATH
+ - As a more thorough check to make sure everything is set up properly, use
+   `cuda-install-samples-9.1.sh` to install the toolkit samples, then pick one
+   to try to compile and run.
 
   **Configure Environment**
 
