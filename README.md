@@ -79,6 +79,8 @@ The simplest that I've found is as follows:
     - Currently only works if matplotlib with the Qt4Agg backend has been 
       loaded *first*. The ETS_TOOLKIT env var was supposed to take care of 
       this, but it appears to not quite do the trick.
+    - This conflicts with ros-kinetic. Have not yet figured out how to get
+      mayavi and ros-kinetic installed on the same 16.04 system.
    
 15. `sudo python_virtualenv_setup.sh`: Set up `virtualenv` and associated
    tools to combat python compatibility issues when installing new packages.
