@@ -75,6 +75,10 @@ The simplest that I've found is as follows:
    
 14. `sudo python_mayavi.sh`: Mayavi installation is annoying, requires special
    attention to keep from borking python environment.
+   NOTES:
+    - Currently only works if matplotlib with the Qt4Agg backend has been 
+      loaded *first*. The ETS_TOOLKIT env var was supposed to take care of 
+      this, but it appears to not quite do the trick.
    
 15. `sudo python_virtualenv_setup.sh`: Set up `virtualenv` and associated
    tools to combat python compatibility issues when installing new packages.
