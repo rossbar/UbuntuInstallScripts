@@ -6,5 +6,6 @@ cat <<EOM >>$FILE
 alias ipy='ipython --pylab'
 alias ipyn='ipython notebook'
 # Make bash pretty
+source /usr/share/git/git-prompt.sh
 source $HOME/.bash_color
 EOM
